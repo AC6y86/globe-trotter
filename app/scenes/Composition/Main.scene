@@ -1,0 +1,67 @@
+entities:
+  com.meta.models.Scene:
+    - components:
+        com.meta.components.Name:
+          {}
+        com.meta.components.Scene:
+          nodes:
+            - ref:Sphere
+            - ref:WebviewPanel
+      tag: Scene
+  com.meta.models.SceneNode:
+    - components:
+        com.meta.components.Animatable:
+          {}
+        com.meta.components.Name:
+          name: WebviewPanel
+        com.meta.components.PointerNodeInverseComponent:
+          {}
+        com.meta.components.SceneNode:
+          rotation.data:
+            - 6.12323426e-17
+            - 6.12323426e-17
+            - 1
+            - -3.74939976e-33
+          rotation.format: Quaternion
+          scale:
+            - 1.05667567
+            - 1.16640091
+            - 1
+          translation:
+            - 0.721479297
+            - 1.23826337
+            - 0.10446167
+          componentVersion: 1
+        com.meta.spatial.toolkit.Panel:
+          panel: "@layout/ui_example"
+        com.meta.spatial.toolkit.PanelDimensions:
+          {}
+      tag: WebviewPanel
+    - components:
+        com.meta.components.Animatable:
+          {}
+        com.meta.components.DocumentReference:
+          transformType: None
+          documentReference: projref:Sphere/Main.metaspatialobj
+        com.meta.components.Name:
+          name: Sphere
+        com.meta.components.PointerNodeInverseComponent:
+          {}
+        com.meta.components.SceneNode:
+          rotation.format: Euler
+          scale:
+            - 3
+            - 3
+            - 3
+          translation:
+            - -0.53965044
+            - 1.22730219
+            - 0.0324499607
+          componentVersion: 1
+        com.mycompany.GlobeTrotter.ClickToSpin:
+          rotationSpeed: 90.0
+          rotationAxis: RotationAxis.Y
+          isSpinning: false
+      tag: Sphere
+metadata:
+  version: 1.32

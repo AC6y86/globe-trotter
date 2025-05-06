@@ -1,0 +1,271 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:horizonos="http://schemas.horizonos/sdk"
+4    package="com.paleyprojects.GlobeTrotter"
+5    android:installLocation="auto"
+6    android:versionCode="1"
+7    android:versionName="1.0" >
+8
+9    <uses-sdk
+9-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:11:3-72
+10        android:minSdkVersion="29"
+10-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:11:13-39
+11        android:targetSdkVersion="32" />
+11-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:11:40-69
+12
+13    <horizonos:uses-horizonos-sdk
+13-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:13:3-16:5
+14        horizonos:minSdkVersion="69"
+14-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:14:5-33
+15        horizonos:targetSdkVersion="69" />
+15-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:15:5-36
+16
+17    <!-- Tell the system this app works in either 3dof or 6dof mode -->
+18    <uses-feature
+18-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:19:3-22:5
+19        android:name="android.hardware.vr.headtracking"
+19-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:20:5-52
+20        android:required="true" />
+20-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:21:5-28
+21    <uses-feature
+21-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:25:3-28:5
+22        android:name="oculus.software.handtracking"
+22-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:26:5-48
+23        android:required="false" />
+23-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:27:5-29
+24
+25    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
+25-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:29:3-73
+25-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:29:20-70
+26
+27    <!-- Tell the system this app uses experimental extensions -->
+28    <uses-feature
+28-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:32:3-35:5
+29        android:name="com.oculus.experimental.enabled"
+29-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:33:5-51
+30        android:required="true" />
+30-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:34:5-28
+31    <!-- Tell the system this app can render passthrough -->
+32    <uses-feature
+32-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:37:3-40:5
+33        android:name="com.oculus.feature.PASSTHROUGH"
+33-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:38:5-50
+34        android:required="false" />
+34-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:39:5-29
+35    <!-- Tell the system this app uses the virtual keyboard extensions -->
+36    <uses-feature
+36-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:42:3-45:5
+37        android:name="com.oculus.feature.VIRTUAL_KEYBOARD"
+37-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:43:5-55
+38        android:required="false" />
+38-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:44:5-29
+39    <uses-feature android:glEsVersion="0x00030001" />
+39-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:46:3-52
+39-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:46:17-49
+40    <uses-feature
+40-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:48:3-51:5
+41        android:name="oculus.software.overlay_keyboard"
+41-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:49:5-52
+42        android:required="false" />
+42-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:50:5-29
+43
+44    <uses-permission android:name="android.permission.INTERNET" />
+44-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:52:3-65
+44-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:52:20-62
+45
+46    <uses-feature
+46-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:53:3-56:5
+47        android:name="com.oculus.feature.RENDER_MODEL"
+47-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:54:5-51
+48        android:required="false" />
+48-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:55:5-29
+49
+50    <uses-permission android:name="com.oculus.permission.RENDER_MODEL" />
+50-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:57:3-72
+50-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:57:20-69
+51    <!-- Volume Control -->
+52    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+52-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:59:3-78
+52-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:59:20-75
+53
+54    <permission
+54-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+55        android:name="com.paleyprojects.GlobeTrotter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+55-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+56        android:protectionLevel="signature" />
+56-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+57
+58    <uses-permission android:name="com.paleyprojects.GlobeTrotter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+58-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+58-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+59    <uses-permission android:name="com.oculus.permission.XRS_STREAM" />
+59-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:11:5-72
+59-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:11:22-69
+60    <uses-permission android:name="com.oculus.permission.WIFI_LOCK" />
+60-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:13:5-71
+60-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:13:22-68
+61    <uses-permission android:name="android.permission.WAKE_LOCK" />
+61-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:14:5-68
+61-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:14:22-65
+62    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+62-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:15:5-81
+62-->[com.meta.spatial:meta-spatial-sdk-castinputforward:0.6.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\f12094ba6de189e97946bb576eb1bc92\transformed\meta-spatial-sdk-castinputforward-0.6.0\AndroidManifest.xml:15:22-78
+63    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+64
+65    <application
+65-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:61:3-93:17
+66        android:allowBackup="false"
+66-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:61:16-43
+67        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+67-->[androidx.core:core:1.13.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\e9f3a70c7abcc93890ef6a4bdc615da3\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+68        android:debuggable="true"
+69        android:extractNativeLibs="false"
+70        android:label="GlobeTrotter" >
+70-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:61:44-72
+71        <meta-data
+71-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:62:5-65:7
+72            android:name="com.oculus.supportedDevices"
+72-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:63:7-49
+73            android:value="quest2|questpro|quest3" />
+73-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:64:7-45
+74        <meta-data
+74-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:66:5-69:7
+75            android:name="com.oculus.handtracking.version"
+75-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:67:7-53
+76            android:value="V2.0" />
+76-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:68:7-27
+77        <meta-data
+77-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:70:5-79
+78            android:name="com.oculus.vr.focusaware"
+78-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:70:16-55
+79            android:value="true" />
+79-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:70:56-76
+80
+81        <activity
+81-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:72:5-86:16
+82            android:name="com.paleyprojects.GlobeTrotter.ImmersiveActivity"
+82-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:73:7-70
+83            android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard|navigation|uiMode"
+83-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:77:7-108
+84            android:excludeFromRecents="false"
+84-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:75:7-41
+85            android:exported="true"
+85-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:78:7-30
+86            android:launchMode="singleTask"
+86-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:74:7-38
+87            android:screenOrientation="landscape" >
+87-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:76:7-44
+88
+89            <!-- This filter lets the apk show up as a launchable icon. -->
+90            <intent-filter>
+90-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:81:7-85:23
+91                <action android:name="android.intent.action.MAIN" />
+91-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:82:9-61
+91-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:82:17-58
+92
+93                <category android:name="com.oculus.intent.category.VR" />
+93-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:83:9-66
+93-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:83:19-63
+94                <category android:name="android.intent.category.LAUNCHER" />
+94-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:84:9-69
+94-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:84:19-66
+95            </intent-filter>
+96        </activity>
+97        <activity
+97-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:87:5-92:7
+98            android:name="com.paleyprojects.GlobeTrotter.PanelActivity"
+98-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:88:7-66
+99            android:allowEmbedded="true"
+99-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:89:7-35
+100            android:exported="true"
+100-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:91:7-30
+101            android:theme="@style/Theme.Transparent" />
+101-->C:\Users\joepaley\projects\Globe Trotter\app\src\main\AndroidManifest.xml:90:7-47
+102        <activity
+102-->[androidx.compose.ui:ui-test-manifest:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\e4dc2a17e7efe08c6a4809a8875a9cf8\transformed\ui-test-manifest-1.7.8\AndroidManifest.xml:23:9-25:39
+103            android:name="androidx.activity.ComponentActivity"
+103-->[androidx.compose.ui:ui-test-manifest:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\e4dc2a17e7efe08c6a4809a8875a9cf8\transformed\ui-test-manifest-1.7.8\AndroidManifest.xml:24:13-63
+104            android:exported="true" />
+104-->[androidx.compose.ui:ui-test-manifest:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\e4dc2a17e7efe08c6a4809a8875a9cf8\transformed\ui-test-manifest-1.7.8\AndroidManifest.xml:25:13-36
+105        <activity
+105-->[androidx.compose.ui:ui-tooling-android:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\36d632e31a2b5c981c9f65a2f8f38fd2\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+106            android:name="androidx.compose.ui.tooling.PreviewActivity"
+106-->[androidx.compose.ui:ui-tooling-android:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\36d632e31a2b5c981c9f65a2f8f38fd2\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+107            android:exported="true" />
+107-->[androidx.compose.ui:ui-tooling-android:1.7.8] C:\Users\joepaley\.gradle\caches\8.9\transforms\36d632e31a2b5c981c9f65a2f8f38fd2\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+108
+109        <provider
+109-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+111            android:authorities="com.paleyprojects.GlobeTrotter.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.3.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\5f79e496a2e1871b22032f69d0d249c8\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\joepaley\.gradle\caches\8.9\transforms\d3db2767105ff4c08bb6c0c4a4d53599\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\joepaley\.gradle\caches\8.9\transforms\d3db2767105ff4c08bb6c0c4a4d53599\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\joepaley\.gradle\caches\8.9\transforms\d3db2767105ff4c08bb6c0c4a4d53599\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+119            <meta-data
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+120                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+121                android:value="androidx.startup" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+122        </provider>
+123
+124        <receiver
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+125            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+126            android:directBootAware="false"
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+127            android:enabled="true"
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+128            android:exported="true"
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+129            android:permission="android.permission.DUMP" >
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+131                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+134                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+135            </intent-filter>
+136            <intent-filter>
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+137                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+138            </intent-filter>
+139            <intent-filter>
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+140                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joepaley\.gradle\caches\8.9\transforms\50f48fa2573c327cff13e353e17c95c0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+141            </intent-filter>
+142        </receiver>
+143
+144        <meta-data
+144-->[com.facebook.soloader:soloader:0.11.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\e91044aae40ab55dc8688ade51301753\transformed\soloader-0.11.0\AndroidManifest.xml:12:9-14:37
+145            android:name="com.facebook.soloader.enabled"
+145-->[com.facebook.soloader:soloader:0.11.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\e91044aae40ab55dc8688ade51301753\transformed\soloader-0.11.0\AndroidManifest.xml:13:13-57
+146            android:value="false" />
+146-->[com.facebook.soloader:soloader:0.11.0] C:\Users\joepaley\.gradle\caches\8.9\transforms\e91044aae40ab55dc8688ade51301753\transformed\soloader-0.11.0\AndroidManifest.xml:14:13-34
+147    </application>
+148
+149</manifest>

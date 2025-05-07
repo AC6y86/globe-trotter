@@ -42,7 +42,7 @@ class ImmersiveActivity : AppSystemActivity() {
   override fun registerFeatures(): List<SpatialFeature> {
     val features = mutableListOf<SpatialFeature>(VRFeature(this))
     if (BuildConfig.DEBUG) {
-      features.add(CastInputForwardFeature(this))
+      //features.add(CastInputForwardFeature(this))
       features.add(HotReloadFeature(this))
       features.add(OVRMetricsFeature(this, OVRMetricsDataModel() { numberOfMeshes() }))
       features.add(DataModelInspectorFeature(spatial, this.componentManager))

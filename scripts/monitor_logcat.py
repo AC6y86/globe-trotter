@@ -218,6 +218,12 @@ def monitor_logcat(logcat_file, package_name, max_repeats=0, verbose=False, no_b
         "file_backup_helper",
         "BackupManagerService",
         "BackupRestoreController",
+
+        # Oculus/Meta/PlaneFreeSpace JNI/NoSuchElementException noise
+        "OculusFederatedComputingIPCServer: encountered JNI exception in EndGPRIPSTransaction: java.util.NoSuchElementException: Key",
+        "OculusFederatedComputingIPCServer: java.util.NoSuchElementException: Key",
+        "MIXEDREALITY: PlaneFreeSpace: PlaneFreespaceComputeCapability: GpripsClient: Exception in task: Failed to end transaction: java.util.NoSuchElementException: Key",
+
         "KeyValueBackupTask",
         "PFTBT",
         "KVBT",

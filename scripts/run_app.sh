@@ -85,35 +85,18 @@ fi
 # Clear logcat buffer before launching the app to ensure only new logs are present
 adb -s "$DEVICE" logcat -c
 
+# Quit the app if it is running
+adb -s "$DEVICE" shell am force-stop "$PACKAGE"
+
 # Launch the app
 adb -s "$DEVICE" shell monkey -p "$PACKAGE" -c android.intent.category.LAUNCHER 1
 
-# Wait a moment for the app to start
-sleep 2
-
-# Show initial logs from our app
-echo "=== Initial app logs ==="
-adb -s "$DEVICE" logcat -d | grep "ImmersiveActivity" | tail -n 10
-
-# Poll for the new app's PID in the background (suppress output)
-(
-  PID=""
-  while [ -z "$PID" ]; do
-    PID=$(adb -s "$DEVICE" shell ps | awk '$9 == "'"$PACKAGE"'" {print $2}' | head -n 1)
-    sleep 1
-  done
-  echo "Detected PID: $PID. Monitoring logcat for crashes..." > /dev/null
-) &
-PID_POLL_PID=$!
 
 # Run logcat with the dedicated monitoring script
 echo "Monitoring for crashes (press Ctrl+C to stop)..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 adb -s "$DEVICE" logcat | python3 "$SCRIPT_DIR/monitor_logcat.py" "$PACKAGE"
 MONITOR_EXIT=$?
-
-# Clean up background processes
-kill $PID_POLL_PID 2>/dev/null
 
 # Check exit code from monitor script
 if [ $MONITOR_EXIT -eq 0 ]; then

@@ -1,0 +1,5 @@
+data:
+  tabs:
+    - Composition
+    - earth
+  current_tab: earth

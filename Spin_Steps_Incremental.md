@@ -1,9 +1,19 @@
+# General Rules
+Go through in order
+Add logging at each step to know a phase has passed
+Mark DONE on each before proceeding to the next step
+Don't move to the next step until I've told you to
+Use the Meta Spatial SDK sample in samples/geo_voyage as a reference for all steps
+
 # Incremental Implementation for Globe Spinning
 
 ## Phase 1: Basic Touch Detection (Learning Component Structure)
 1. **Create a Simple Touchable Component**
-   - Create a minimal component that just marks an entity as touchable
+   - Create a Touchable.xml component schema in app/src/main/components
+   - Add a simple boolean attribute to track touch state
+   - Register the generated component in ImmersiveActivity
    - Create a system that listens for touch events on touchable entities
+   - Apply the Touchable component to the sphere entity
    - Log messages when touches are detected
    - Test to ensure touch detection works before adding more complexity
 

@@ -95,7 +95,8 @@ adb -s "$DEVICE" shell monkey -p "$PACKAGE" -c android.intent.category.LAUNCHER 
 # Run logcat with the dedicated monitoring script
 echo "Monitoring for crashes (press Ctrl+C to stop)..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-adb -s "$DEVICE" logcat | python3 "$SCRIPT_DIR/monitor_logcat.py" "$PACKAGE"
+# Filter out ExoPlayer errors before they reach the Python script
+adb -s "$DEVICE" logcat | grep -v "ExoPlayerImplInternal" | grep -v "MediaCodec" | python3 "$SCRIPT_DIR/monitor_logcat.py" "$PACKAGE"
 MONITOR_EXIT=$?
 
 # Check exit code from monitor script

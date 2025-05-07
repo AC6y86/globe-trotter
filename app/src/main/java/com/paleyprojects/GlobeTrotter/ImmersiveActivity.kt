@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.webkit.WebView
 import android.widget.TextView
@@ -16,6 +17,8 @@ import com.meta.spatial.core.SpatialFeature
 import com.meta.spatial.core.Vector3
 import com.meta.spatial.datamodelinspector.DataModelInspectorFeature
 import com.meta.spatial.debugtools.HotReloadFeature
+import com.meta.spatial.isdk.IsdkFeature
+import com.meta.spatial.isdk.IsdkSphereCollider
 import com.meta.spatial.okhttp3.OkHttpAssetFetcher
 import com.meta.spatial.ovrmetrics.OVRMetricsDataModel
 import com.meta.spatial.ovrmetrics.OVRMetricsFeature
@@ -40,7 +43,10 @@ class ImmersiveActivity : AppSystemActivity() {
   private val activityScope = CoroutineScope(Dispatchers.Main)
 
   override fun registerFeatures(): List<SpatialFeature> {
-    val features = mutableListOf<SpatialFeature>(VRFeature(this))
+    val features = mutableListOf<SpatialFeature>(
+      VRFeature(this),
+      IsdkFeature(this, spatial, systemManager)  // Add Interaction SDK support for gesture handling
+    )
     if (BuildConfig.DEBUG) {
       //features.add(CastInputForwardFeature(this))
       features.add(HotReloadFeature(this))
@@ -129,11 +135,40 @@ class ImmersiveActivity : AppSystemActivity() {
 
   private fun loadGLXF(): Job {
     gltfxEntity = Entity.create()
+    Log.d("GlobeTrotter", "Starting to load GLXF...")
     return activityScope.launch {
       glXFManager.inflateGLXF(
           Uri.parse("apk:///scenes/Composition.glxf"),
           rootEntity = gltfxEntity!!,
           keyName = "example_key_name")
+    }.also { job ->
+      job.invokeOnCompletion { throwable ->
+        if (throwable != null) {
+          Log.e("GlobeTrotter", "Failed to load GLXF: ${throwable.message}")
+        } else {
+          Log.d("GlobeTrotter", "Successfully loaded GLXF")
+          
+          // Get the composition and list all node names to find the sphere
+          val composition = glXFManager.getGLXFInfo("example_key_name")
+          val nodeNames = composition.nodes.map { it.name }
+          Log.d("GlobeTrotter", "Available nodes: $nodeNames")
+          
+          // Find the sphere node and add a collider if needed
+          val sphereNode = composition.getNodeByName("Sphere")
+          val sphereEntity = sphereNode?.entity
+          
+          if (sphereEntity != null) {
+            Log.d("GlobeTrotter", "Found sphere entity")
+            // Create a sphere collider component for ISDK interactions
+            val sphereCollider = IsdkSphereCollider(radius = 0.15f)
+            // Add the collider to the entity
+            sphereEntity.setComponent(sphereCollider)
+            Log.d("GlobeTrotter", "Added collider to sphere")
+          } else {
+            Log.e("GlobeTrotter", "Sphere entity not found")
+          }
+        }
+      }
     }
   }
 }

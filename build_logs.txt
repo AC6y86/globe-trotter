@@ -51,5 +51,5 @@ Spatial SDK Plugin loaded for Windows-64
 > Task :app:createDebugApkListingFileRedirect UP-TO-DATE
 > Task :app:assembleDebug
 
-BUILD SUCCESSFUL in 12s
+BUILD SUCCESSFUL in 4s
 41 actionable tasks: 7 executed, 34 up-to-date

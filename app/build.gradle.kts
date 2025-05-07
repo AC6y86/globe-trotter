@@ -60,6 +60,7 @@ dependencies {
   implementation(libs.meta.spatial.sdk.castinputforward)
   implementation(libs.meta.spatial.sdk.hotreload)
   implementation(libs.meta.spatial.sdk.datamodelinspector)
+  implementation(libs.meta.spatial.sdk.isdk)
 
   // Compose Dependencies
   implementation("androidx.compose.foundation:foundation-android:1.7.8")

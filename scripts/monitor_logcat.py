@@ -96,6 +96,34 @@ def process_line(line, app_pids, package_name, ignore_patterns, in_crash_section
     if in_crash_section:
         return in_crash_section, True, None
     
+    # First, filter out specific noisy errors regardless of PID
+    if any(pattern in line for pattern in [
+        # Media playback related
+        "ExoPlayerImplInternal",
+        "MediaCodec",
+        "CodecException",
+        "setSurface()",
+        "Invalid to call at Released state",
+        "rendering to non-initialized",
+        "releaseOutputBuffer()",
+        "BufferQueueProducer",
+        "MediaPlayer",
+        "AudioTrack",
+        
+        # System errors and warnings
+        "ApkAssets",
+        "Compatibility callbacks",
+        "ClassNotFoundException",
+        "NoClassDefFoundError",
+        "Service not registered",
+        "Timeout",
+        "FetchBLEStatsTask",
+        "W System",
+        "type=1400",
+        "audit"
+    ]):
+        return in_crash_section, False, None
+        
     # Only show logs from our app's PID or with whitelisted tags
     if current_pid in app_pids or tag in whitelist_tags:
         # Skip lines that match ignore patterns
@@ -126,6 +154,7 @@ def monitor_logcat(logcat_file, package_name, max_repeats=0, verbose=False, no_b
     # Only show logs with these tags (add more as needed)
     whitelist_tags = [
         "ImmersiveActivity",
+        "GlobeTrotter",  # Add our custom tag for debug logs
         # Removed generic OpenXR tag to reduce noise
         # Only include specific VR-related tags we care about
         "VrApi",
@@ -223,6 +252,14 @@ def monitor_logcat(logcat_file, package_name, max_repeats=0, verbose=False, no_b
         "OculusFederatedComputingIPCServer: encountered JNI exception in EndGPRIPSTransaction: java.util.NoSuchElementException: Key",
         "OculusFederatedComputingIPCServer: java.util.NoSuchElementException: Key",
         "MIXEDREALITY: PlaneFreeSpace: PlaneFreespaceComputeCapability: GpripsClient: Exception in task: Failed to end transaction: java.util.NoSuchElementException: Key",
+
+        # ExoPlayer and system errors
+        "ExoPlayerImplInternal",  # Filter all ExoPlayer errors
+        "No Compatibility callbacks set! Querying change",
+        "type=1400 audit(0.0:",
+        "FetchBLEStatsTask: FetchBLEStatsTask did not succeed",
+        "IPCManager: java.lang.IllegalArgumentException: Service not registered",
+        "System.err: INFO: com.whatsapp",
 
         "KeyValueBackupTask",
         "PFTBT",
